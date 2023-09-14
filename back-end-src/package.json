@@ -1,0 +1,24 @@
+{
+  "name": "back-end-src",
+  "version": "1.0.0",
+  "description": "MonoPackage",
+  "main": "index.js",
+  "scripts": {
+    "start-service-mail:dev": "NODE_ENV=development env-cmd -f ./MailService/.env.development nodemon ./MailService/src/index.js",
+    "start-service-order:dev": "NODE_ENV=development env-cmd -f ./OrderService/.env.development nodemon ./OrderService/src/index.js",
+    "start-service-product:dev": "NODE_ENV=development env-cmd -f ./ProductService/.env.development nodemon ./ProductService/src/index.js",
+    "start-service-user:dev": "NODE_ENV=development env-cmd -f ./UserService/.env.development nodemon ./UserService/src/index.js",
+    "start-service-cart:dev": "NODE_ENV=development env-cmd -f ./CartService/.env.development nodemon ./CartService/src/index.js",
+    "start-services:dev": "concurrently \"npm:start-service-*:dev\""
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  },
+  "dependencies": {
+    "env-cmd": "^10.1.0",
+    "jsonwebtoken": "^9.0.1",
+    "win-node-env": "^0.6.1"
+  }
+}
